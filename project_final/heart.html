@@ -488,27 +488,30 @@ html, body{
         this.scene.add(this.model);
       }
       addButton() {
-        this.audioBtn = document.querySelector("button");
-        this.audioBtn.addEventListener("click", () => {
-          this.audioBtn.disabled = true;
-          if (this.analyser) {
-            this.sound.play();
-            this.time.t0 = this.time.elapsed;
-            this.data = 0;
-            this.isRunning = true;
-            gsap.to(this.audioBtn, {
-              opacity: 0,
-              duration: 1,
-              ease: "power1.out"
-            });
+  this.audioBtn = document.querySelector("button");
+  this.audioBtn.addEventListener("click", () => {
+    if (THREE.AudioContext.getContext().state === "suspended") {
+      THREE.AudioContext.getContext().resume();
+    }
+    this.audioBtn.disabled = true;
+    if (this.analyser) {
+      this.sound.play();
+      this.time.t0 = this.time.elapsed;
+      this.data = 0;
+      this.isRunning = true;
+      gsap.to(this.audioBtn, {
+        opacity: 0,
+        duration: 1,
+        ease: "power1.out"
+      });
 
-          } else {
-            this.loadMusic().then(() => {
-              console.log("music loaded");
-            });
-          }
-        });
-      }
+    } else {
+      this.loadMusic().then(() => {
+        console.log("music loaded");
+      });
+    }
+  });
+}
       loadObj(path) {
         const loader = new THREE.GLTFLoader();
         return new Promise(resolve => {
