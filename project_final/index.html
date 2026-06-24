@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<title>هدية عيد ميلاد 🎂</title>
+<title>Sara birthday 🎂 </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -82,7 +82,21 @@
     pointer-events:none;
     position:fixed; inset:0;
   }
-
+.stage{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  margin:0 auto !important;
+  text-align:center !important;
+}
+#invite{
+  margin:0 auto !important;
+  width:100% !important;
+  max-width:560px !important;
+  text-align:center !important;
+}
   .eyebrow{
     font-size: 14px;
     letter-spacing: .15em;
@@ -437,7 +451,7 @@
       <div class="note note-2">🎶</div>
     </div>
 
-    <h2 class="greet-title">كل سنة وأنت بخير!</h2>
+    <h2 class="greet-title">كل سنة وأنتي بخير!</h2>
     <div id="typedMsg"></div>
 
     <div class="balloons-row" id="balloonsRow">
@@ -460,8 +474,8 @@
     <canvas id="particleCanvas"></canvas>
     <div class="second-gift-content">
       <div class="sparkle-emoji">💝</div>
-      <h2 class="greet-title">هدية تانية لك</h2>
-      <p class="second-gift-text">كل نجمة هنا هي أمنية صغيرة لك بمناسبة يومك<br>تستاهلي كل تألق وكل بريق بهذا العالم ✨</p>
+      <h2 class="greet-title">ياصرصورة</h2>
+      <p class="second-gift-text">كل نجمة هنا هي أمنية صغيرة لك بمناسبة يومك<br>🕯 make a wish </p>
       <button class="back-btn" id="backBtn">رجوع 🎀</button>
     </div>
   </section>
@@ -526,10 +540,9 @@
   // ---------- Typing effect ----------
   const message = `كل عام وانتي بخير 🎂
 ينعاد عليك بصحة وسلامة يا رب
-تكون سنة خير عليكِ وتحققي فيها كل ما تريدين
+يارب تكون سنة خير عليكِ وتحققي فيها كل ما تريدي
 ربي يسعدك فيها وما تشوفي فيها إلا الخير
-موفقة في امتحاناتك كلها، وتجاوبي وتصفّي كل موادك
-موفقة يا رب، تستاهلي كل خير 💫`;
+اقوى باش مهندسة في العالم❤️`;
 
   function typeMessage(el, text, speed=32){
     el.innerHTML = '';
