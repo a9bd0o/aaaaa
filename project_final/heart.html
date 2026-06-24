@@ -6,7 +6,6 @@
   <title>Crystal Heart </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://use.typekit.net/trt3ngp.css">
-  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
@@ -83,14 +82,13 @@
     svg {
       width: 3.5vh;
     }
-   
   </style>
 </head>
 
 <body>
 
   <canvas class="webgl"></canvas>
-  <h1 class="h1text">this is for you sara </h1>
+  <h1 class="h1text">this is for you sara</h1>
   <button id="play-music" type="button" aria-label="Play music">
     <svg fill="currentColor" viewBox="0 0 512 512" width="100" title="music">
       <path
@@ -445,30 +443,27 @@
         this.scene.add(this.model);
       }
       addButton() {
-  this.audioBtn = document.querySelector("button");
-  this.audioBtn.addEventListener("click", () => {
-    if (THREE.AudioContext.getContext().state === "suspended") {
-      THREE.AudioContext.getContext().resume();
-    }
-    this.audioBtn.disabled = true;
-    if (this.analyser) {
-      this.sound.play();
-      this.time.t0 = this.time.elapsed;
-      this.data = 0;
-      this.isRunning = true;
-      gsap.to(this.audioBtn, {
-        opacity: 0,
-        duration: 1,
-        ease: "power1.out"
-      });
+        this.audioBtn = document.querySelector("button");
+        this.audioBtn.addEventListener("click", () => {
+          this.audioBtn.disabled = true;
+          if (this.analyser) {
+            this.sound.play();
+            this.time.t0 = this.time.elapsed;
+            this.data = 0;
+            this.isRunning = true;
+            gsap.to(this.audioBtn, {
+              opacity: 0,
+              duration: 1,
+              ease: "power1.out"
+            });
 
-    } else {
-      this.loadMusic().then(() => {
-        console.log("music loaded");
-      });
-    }
-  });
-}
+          } else {
+            this.loadMusic().then(() => {
+              console.log("music loaded");
+            });
+          }
+        });
+      }
       loadObj(path) {
         const loader = new THREE.GLTFLoader();
         return new Promise(resolve => {
