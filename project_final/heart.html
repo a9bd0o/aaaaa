@@ -597,6 +597,15 @@
 
 
     world.loop();
+    function startMusicOnce() {
+  if (!world.analyser) {
+    world.loadMusic();
+  }
+  document.removeEventListener("click", startMusicOnce);
+  document.removeEventListener("touchstart", startMusicOnce);
+}
+document.addEventListener("click", startMusicOnce);
+document.addEventListener("touchstart", startMusicOnce);
   </script>
 </body>
 
