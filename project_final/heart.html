@@ -20,7 +20,28 @@
       overflow: hidden;
       background: #16000a;
     }
-
+/* ===== Mobile fix ===== */
+html, body{
+  height:100%;
+  touch-action: manipulation;
+}
+.webgl{
+  width:100vw !important;
+  height:100dvh !important;
+}
+@media (max-width: 600px){
+  h1{
+    font-size: max(1.4rem, 4vh) !important;
+    top: 6vh !important;
+  }
+  button{
+    height: 14vh !important;
+    width: 14vh !important;
+  }
+  svg{
+    width: 6vh !important;
+  }
+}
     body {
       -webkit-font-smoothing: antialiased;
       color: #ffdada;
